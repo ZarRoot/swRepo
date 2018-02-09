@@ -3,11 +3,22 @@
 
 using namespace std;
 
-int* CoolSort(int unsortedArr[], int H[])
+int* CoolSort(int unsortedArr[], int arrSize, int H[], int hSize)
 {
-  cout << " * Entering CoolSort()" << endl;
-  int* sortedArr;
+ 
+  int* sortedArr = unsortedArr;
+  int acc = 0;
 
-  cout << " * Exiting CoolSort()" << endl;
+  while(acc < hSize){
+
+    if(H[acc] > arrSize){
+      perror("sequence element larger than number of elements in array");
+      exit(1);
+    }
+
+    acc++;
+  }
+
   return sortedArr;
+
 } 

@@ -13,7 +13,7 @@ int main(){
   int testCase2[] = {2,5,9,4,10,7,8,1,11,5};
   int H2[] = {5,2,1};
 
-  CoolSort(testCase1, H1);
+  CoolSort(testCase1,10, H1, 3);
 
   cout << "Exiting Main" << endl;
 
