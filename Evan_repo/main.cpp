@@ -15,7 +15,7 @@ int main(){
 
   CoolSort(testCase1,10, H1, 3);
 
-  cout << "Exiting Main" << endl;
+  cout << "\nExiting Main" << endl;
 
   return 0;
 }
