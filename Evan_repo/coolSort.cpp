@@ -36,14 +36,16 @@ int* CoolSort(int unsortedArr[], int arrSize, int H[], int hSize)
 	a = i;
 	b = a + stepSize;
 
-	if(sortedArr[a] > sortedArr[b]){
-	  tmp = sortedArr[a];
-	  sortedArr[a] = sortedArr[b];
-	  sortedArr[b] = tmp;
-	}
-	cout << sortedArr[a] << " ";
+	//	cout << sortedArr[a] << " ";
 	while(b < arrSize){
-	  cout << sortedArr[b] << " ";
+	  // cout << sortedArr[b] << " ";
+	  
+	  if(sortedArr[b] < sortedArr[a]){
+	    tmp = sortedArr[a];
+	    sortedArr[a] = sortedArr[b];
+	    sortedArr[b] = tmp;
+	  }
+	  a = b;
 	  b += stepSize;
 	}
 	cout << endl;
