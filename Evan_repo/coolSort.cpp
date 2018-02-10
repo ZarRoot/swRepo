@@ -18,7 +18,7 @@ int* CoolSort(int unsortedArr[], int arrSize, int H[], int hSize)
   //Instantiate and Assign Variables
   int* sortedArr = unsortedArr;
   int acc = 0;
-  int a, b, tmp;
+  int a, b, tmpB, tmpIndex, tmpVal;
 
   //Begin sorting
   while(acc < hSize){
@@ -36,17 +36,25 @@ int* CoolSort(int unsortedArr[], int arrSize, int H[], int hSize)
 	a = i;
 	b = a + stepSize;
 
+	tmpB = b;
+
 	//	cout << sortedArr[a] << " ";
 	while(b < arrSize){
 	  // cout << sortedArr[b] << " ";
-	  
-	  if(sortedArr[b] < sortedArr[a]){
-	    tmp = sortedArr[a];
-	    sortedArr[a] = sortedArr[b];
-	    sortedArr[b] = tmp;
+	  tmpIndex = a;
+
+	  while(tmpIndex >= i && sortedArr[tmpB] < sortedArr[tmpIndex]){
+	    tmpVal = sortedArr[tmpIndex];
+	    sortedArr[tmpIndex] = sortedArr[tmpB];
+	    sortedArr[tmpB] = tmpVal;
+
+	    tmpB = tmpIndex;
+	    tmpIndex -= stepSize;
 	  }
+
 	  a = b;
 	  b += stepSize;
+	  tmpB = b;
 	}
 	cout << endl;
     }
