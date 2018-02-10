@@ -4,11 +4,11 @@
 using namespace std;
 
 void printArr(int arr[], int size){
-  cout << "\n** Printing Arr **" << endl;
+  cout << "** Printing Sorted Arr **" << endl;
   for(int i=0; i<size; i++){
     cout << arr[i] << " ";
   }
-  cout << endl;
+  cout << "\n" << endl;
 
   return;
 }
@@ -30,8 +30,8 @@ int* CoolSort(int unsortedArr[], int arrSize, int H[], int hSize)
       exit(1);
     }
 
-    cout << "\nStep Size: " << stepSize << endl;
-    cout << "Cylce: " << acc << endl;
+    // cout << "\nStep Size: " << stepSize << endl;
+    //cout << "Cylce: " << acc << endl;
     for(int i=0; i<stepSize; i++){
 	a = i;
 	b = a + stepSize;
@@ -56,13 +56,13 @@ int* CoolSort(int unsortedArr[], int arrSize, int H[], int hSize)
 	  b += stepSize;
 	  tmpB = b;
 	}
-	cout << endl;
+	//	cout << endl;
     }
-
-    printArr(sortedArr, arrSize);
 
     acc++;
   }
+
+  printArr(sortedArr, arrSize);
 
   return sortedArr;
 
